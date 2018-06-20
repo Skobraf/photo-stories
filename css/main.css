@@ -173,3 +173,65 @@ ul {
   background-size: cover;
   margin-bottom: 20px;
 }
+
+@media only screen and (min-width: 600px) {
+  img {
+    height: 1500px;
+  }
+  .main {
+    max-width: 1200px;
+    padding-top: 100px;
+  }
+  .main > ul {
+    display: flex;
+    flex-direction: row;
+    height: 600px;
+  }
+  .hero {
+   flex: 1;
+   position: relative;
+  }
+
+  .nav ul li {
+    z-index: 2;
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .scroll_bar {
+    width: 150px;
+    height: 100%;
+  }
+
+  .scroll_bar ul {
+    height: 100%;
+  }
+
+  .scroll_bar ul li {
+    height: 25%;
+  }
+
+  .articles .popular-articles {
+    height: 100%;
+    padding: 0 40px;
+  }
+
+  .articles .popular-articles h1{
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    height: 100px;
+    line-height: 100px;
+    
+  }
+
+  #art-1, #art-2{
+    width: 120px;
+    height: 120px;
+  }
+}
