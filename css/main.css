@@ -5,10 +5,38 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  font-weight: 500;
+  color: #ccc;
+  font-size: 0.9rem;
+  transition: all 1s;
+}
+a:hover {
+  color: white;
 }
 
 body {
@@ -24,7 +52,7 @@ body {
 img {
   z-index: 1;
   position: fixed;
-  filter: grayscale();
+  filter: grayscale() brightness(135%);
   background-repeat: no-repeat;
   background-position: center;
   height: 197vh;
@@ -35,6 +63,7 @@ img {
   position: relative;
   margin: 0 auto;
   max-width: 1000px;
+  
 }
 
 ul {
@@ -43,6 +72,8 @@ ul {
 
 .main > ul {
   margin-bottom: 100px;
+  box-shadow: 10px 10px 148px 0px rgba(0,0,0,0.75);
+  
 }
 
 .nav ul {
@@ -60,13 +91,14 @@ ul {
 }
 
 #logo {
-  text-decoration: underline;
+  border-bottom: 2px solid white;
   font-size: 1.2rem;
   font-weight: 600;
+  color: #fff;
 }
 
 .hero {
-  background: #00000061;
+  background: #000009c7;
 }
 
 .hero-content {
@@ -79,8 +111,11 @@ ul {
 }
 
 .hero-content h1{
+  
+  font-family: initial;
   text-align: center;
   text-transform: uppercase;
+  font-weight: 300;
 }
 
 .hero-content p {
@@ -90,8 +125,17 @@ ul {
 .hero-content h1 span {
   display: block;
   font-size: 5rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  
 }
 
+.hero-content h1 span:first-child {
+  display: inline;
+  font-size: 2rem;
+  font-family: initial;
+  font-weight: normal;
+}
 .scroll_bar ul li {
   height: 360px;
 
@@ -126,8 +170,9 @@ ul {
 }
 
 .popular-articles {
-  background: rgb(32,30,30);
-  background: linear-gradient(45deg, rgba(32,30,30,1) 0%, rgba(59,59,65,1) 50%, rgb(119, 125, 125) 100%);
+  background: linear-gradient(45deg, rgba(32,30,39,0.8) 0%,
+   rgba(20,20,29,0.8) 50%);
+   /*rgba(119, 125, 125,0.8) 100%);*/
   padding-top: 20px;
   font-weight: 300;
   display: flex;
@@ -172,4 +217,133 @@ ul {
   background-position: center;
   background-size: cover;
   margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+  img {
+    height: 1500px;
+  }
+  .main {
+    max-width: 1200px;
+    padding-top: 100px;
+  }
+  .main > ul {
+    display: flex;
+    flex-direction: row;
+    height: 600px;
+  }
+  .hero {
+   flex: 1;
+   position: relative;
+  }
+  .nav > ul {
+    margin-left: 160px;
+    width: 400px;
+  }
+  .nav ul li {
+    z-index: 2;
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    width: auto;
+    margin-left: 180px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;
+    text-align: left;
+    letter-spacing: 16px;
+  }
+
+  .hero-content h1 span {
+    letter-spacing: 10px;
+    font-size: 7rem;
+  }
+  .hero-content h1 span:first-child {
+    display: inline;
+    font-size: 2.4rem;
+    font-family: initial;
+    letter-spacing: 15px;
+    font-weight: normal;
+  }
+
+  .hero-content p {
+    text-align: left;
+    margin-top: 40px;
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+  .scroll_bar {
+    width: 150px;
+    height: 100%;
+  }
+
+  .scroll_bar ul {
+    height: 100%;
+  }
+
+  .scroll_bar ul li {
+    height: 25%;
+    position:relative;
+    
+  }
+  .scroll_bar ul li a {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #3333438e;
+    transition: all 1s;
+  }
+
+  .scroll_bar ul li a:hover {
+    background: none;
+  }
+
+  .articles .popular-articles {
+    height: 100%;
+    padding: 0 40px;
+  }
+
+  .articles .popular-articles h1{
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    height: 100px;
+    line-height: 100px;
+    
+  }
+
+  .articles .popular-articles ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .articles .popular-articles h2{
+    font-family: initial;
+    font-size: 0.8rem;
+    color: #ccc;
+    font-style: italic;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .articles .popular-articles h2:hover {
+    color: white;
+  }
+
+  #art-1, #art-2{
+    width: 120px;
+    height: 120px;
+  }
 }
